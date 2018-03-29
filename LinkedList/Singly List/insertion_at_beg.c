@@ -1,74 +1,69 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-int main()
-{
+void insert_element(int value);
+void print();
 
-struct node {
-	int info;
-	struct node *next;
+
+
+struct node{
+        int info;
+        struct node *next;
 };
 
 struct node *new1;
+struct node *start=NULL;
+struct node *last=NULL;
 
-new1 = (struct node*)malloc(sizeof(struct node));
-start = (struct node*)malloc(sizeof(struct node));
-
-for(i=0;i<5;i++)
+void main()
 {
-	scanf("%d",&new1[i].info);
+	int i;
+	int value;
+	
+	while(i<5)
+	{
+		printf("Enter the Value in list : ");
+		scanf("%d",&value);
+		insert_element(value);
+		i++;
+	}
+	
+	printf("\nList is\n");
+    print();
+	
 }
 
-if(new1->info==NULL)
+void insert_element(int value)
 {
-	start = new1;
-	last = new1;
+	new1 = (struct node*)malloc(sizeof(struct node));
+	new1->info = value;
+	new1->next = NULL;
+	
+	if(start == NULL)
+	{
+		start = new1;
+		last = new1;
+	}
+	
+	else
+	{
+		new1->next = start;
+		start = new1;
+	}
 }
 
-else
+void print()
 {
-	new1->next = 
+	new1 = start;
+	
+	while(new1->next!=NULL)
+	{
+		printf("%d ",new1->info);
+		new1 = new1->next;
+	}
+	
+	printf("%d",new1->info);
 }
-
-
-int main()
-{
-struct Node* start = NULL;
-struct Node* second = NULL;
-struct Node* third = NULL;
-
-start = (struct Node*)malloc(sizeof(struct Node)); 
-second = (struct Node*)malloc(sizeof(struct Node));
-third = (struct Node*)malloc(sizeof(struct Node));
-
-start->info = 5; 
-start->next = second; 
-
-second->data = 6;
-second->next = third; 
-
-third->data = 7; 
-third->next = NULL;
-
-print(start);
-
-return 0;
-}
-
-
-while (start != NULL)
-{
-	printf(" %d ", test->info);
-	test = test->next;
-}
-
-return 0;
-
-}
-
-
-
-
-
 
 
 
