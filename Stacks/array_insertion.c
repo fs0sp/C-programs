@@ -29,8 +29,10 @@ void main()
 	printf("The Stack elements are : ");
 	print();
 	
-	printf("Want to delete?");
+	
+	printf("Lets Delete \n ");
 	pop(value);
+	
 	
 }
 
@@ -38,7 +40,7 @@ void insert(int value)
 {
 	if(top == n-1)
 	{
-		printf("Underflow");
+		printf("Overflow");
 	}
 	
 	else 
@@ -53,12 +55,9 @@ void insert(int value)
 void print()
 {
 	
-	if(top = n-1)
-	{
-		printf("Stack Overflow");
-	}
-	
 	int i;
+	
+	
 	for(i=top; i>=0; i--)
 	{
 		
@@ -66,7 +65,13 @@ void print()
 	 
 	}
 	
-	void pop(int value)
+	
+	
+	
+}
+
+
+void pop(int value)
 	
 	{
 		if(top == -1)
@@ -80,7 +85,6 @@ void print()
 			value = stack[top];
 			top--;
 		}
+		
+		print();
 	}
-	
-	
-}

@@ -34,7 +34,7 @@ void insert(int value, int n)
 {
 	if(rear == n-1)
 	{
-		printf("UNDERFLOW");
+		printf("OVERFLOW");
 		exit(1);
 		
 	}
@@ -67,4 +67,20 @@ void print()
 		}
 	}
 	
+}
+
+void del()
+{
+	int item;
+	
+	if((front = rear + 1)|| (front=-1))
+	{
+		printf("UNdeRFLOW");
+	}
+	
+	else
+	{
+		item = Queue[front];
+		front++;
+	}
 }
